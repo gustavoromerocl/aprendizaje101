@@ -13,6 +13,7 @@ class ProspectsController < ApplicationController
   # GET /prospects/new
   def new
     @prospect = Prospect.new
+    @states = State.all
   end
 
   # GET /prospects/1/edit
@@ -21,30 +22,19 @@ class ProspectsController < ApplicationController
 
   # POST /prospects or /prospects.json
   def create
-    @prospect = Prospect.new(prospect_params)
+    @prospect = current_user.prospects.create(prospect_params)
+    @prospect.save_conversation
 
-    respond_to do |format|
-      if @prospect.save
-        format.html { redirect_to @prospect, notice: "Prospect was successfully created." }
-        format.json { render :show, status: :created, location: @prospect }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @prospect.errors, status: :unprocessable_entity }
-      end
-    end
+    redirect_to @prospect
+    
   end
 
   # PATCH/PUT /prospects/1 or /prospects/1.json
   def update
-    respond_to do |format|
-      if @prospect.update(prospect_params)
-        format.html { redirect_to @prospect, notice: "Prospect was successfully updated." }
-        format.json { render :show, status: :ok, location: @prospect }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @prospect.errors, status: :unprocessable_entity }
-      end
-    end
+    @prospect.update(prospect_params)
+    @prospect.save_conversation
+
+    redirect_to @prospect
   end
 
   # DELETE /prospects/1 or /prospects/1.json
@@ -64,6 +54,6 @@ class ProspectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def prospect_params
-      params.require(:prospect).permit(:first_name, :last_name, :phone_number, :email)
+      params.require(:prospect).permit(:first_name, :last_name, :phone_number, :email, :state_id, :content)
     end
 end
