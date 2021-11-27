@@ -4,7 +4,11 @@ class ProspectsController < ApplicationController
 
   # GET /prospects or /prospects.json
   def index
-    @prospects = Prospect.all
+    @prospects = Prospect.all.paginate(page: params[:page], per_page: 5)
+    @interesados = Prospect.all.interesados
+    @total_prospectos = Prospect.prospectos.count
+    @total_interesados = Prospect.interesados.count
+    @total_clientes = Prospect.clientes.count
   end
 
   # GET /prospects/1 or /prospects/1.json

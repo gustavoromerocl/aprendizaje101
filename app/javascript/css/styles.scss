@@ -1,0 +1,61 @@
+@import '~bootstrap/scss/bootstrap';
+
+a{
+    text-decoration: none;
+}
+
+.small-container{
+    width: 100%;
+    max-width: 650px;
+}
+
+.large-container{
+    width: 100%;
+    max-width: 960px;
+}
+
+.center-block{
+    margin:0 auto;
+}
+.padding{
+    padding:10px 15px;
+}
+.margin-top{
+    margin-top: 1.5em;
+}
+
+.field{
+    @extend .margin-top;
+    label{
+        @extend .text-uppercase;
+        @extend .text-secondary;
+
+    }
+    &:first-of-type{
+        margin-top:0;
+    }
+    input:not([type='checkbox']){ //los corchetes acceden a los atributos para validar
+        @extend .form-control;
+        @extend .bg-light;
+    }
+    input[type='checkbox']{
+        display: inline-block;
+        width: auto;
+        vertical-align: middle;
+        margin-right: 0.5em;
+    }
+}
+
+.pagination{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1em;
+}
+
+.count-prospects{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-right: 1.5rem;
+    justify-content: space-between;
+}

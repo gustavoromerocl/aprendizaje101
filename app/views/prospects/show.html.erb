@@ -1,24 +1,25 @@
 <p id="notice"><%= notice %></p>
+<div class="large-container center-block">
+  <p>
+    <strong>First name:</strong>
+    <%= @prospect.first_name %>
+  </p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @prospect.first_name %>
-</p>
+  <p>
+    <strong>Last name:</strong>
+    <%= @prospect.last_name %>
+  </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @prospect.last_name %>
-</p>
+  <p>
+    <strong>Phone number:</strong>
+    <%= @prospect.phone_number %>
+  </p>
 
-<p>
-  <strong>Phone number:</strong>
-  <%= @prospect.phone_number %>
-</p>
+  <p>
+    <strong>Email:</strong>
+    <%= @prospect.email %>
+  </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @prospect.email %>
-</p>
-
-<%= link_to 'Edit', edit_prospect_path(@prospect) %> |
-<%= link_to 'Back', prospects_path %>
+  <%= link_to 'Edit', edit_prospect_path(@prospect) %> |
+  <%= link_to 'Back', prospects_path %>
+</div>

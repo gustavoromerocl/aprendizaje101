@@ -3,7 +3,7 @@
         <%= link_to "Inicio", root_path, class:"nav-link"%>
     </li>
     <li class="nav-item">
-        <%# link_to "Prospectos", prospects_path, class:"nav-link"%>
+        <%= link_to 'Nuevo Prospecto', new_prospect_path, class:"nav-link" %>
     </li>
     <li class="nav-item">
         <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class:"nav-link"%>
