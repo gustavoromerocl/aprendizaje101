@@ -10,7 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_27_130224) do
+ActiveRecord::Schema.define(version: 2021_11_27_144146) do
+
+  create_table "conversations", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "prospect_id", null: false
+    t.index ["prospect_id"], name: "index_conversations_on_prospect_id"
+  end
+
+  create_table "prospects", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "phone_number"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.integer "state_id", null: false
+    t.index ["state_id"], name: "index_prospects_on_state_id"
+    t.index ["user_id"], name: "index_prospects_on_user_id"
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string "status_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,4 +51,7 @@ ActiveRecord::Schema.define(version: 2021_11_27_130224) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "conversations", "prospects"
+  add_foreign_key "prospects", "states"
+  add_foreign_key "prospects", "users"
 end
