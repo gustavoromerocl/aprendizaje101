@@ -12,37 +12,37 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :first_name %>
+    <%= form.label "Nombre" %>
     <%= form.text_field :first_name %>
   </div>
 
   <div class="field">
-    <%= form.label :last_name %>
+    <%= form.label "Apellido" %>
     <%= form.text_field :last_name %>
   </div>
 
   <div class="field">
-    <%= form.label :phone_number %>
+    <%= form.label "Número de teléfono" %>
     <%= form.text_field :phone_number %>
   </div>
 
   <div class="field">
-    <%= form.label :email %>
+    <%= form.label "Correo electrónico" %>
     <%= form.text_field :email %>
   </div>
 
   <div class="field"> 
-      <%= form.label :states %>
+      <%= form.label "Estados" %>
       <%= collection_select(:prospect , :state_id, State.all, :id, :status_name) %>
       
   </div>
 
   <div class="field"> 
-      <%= form.label :conversation %>
+      <%= form.label "Anotación" %>
       <%= form.rich_text_area :content %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Guardar" %>
   </div>
 <% end %>

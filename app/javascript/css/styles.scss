@@ -15,13 +15,30 @@ a{
 }
 
 .center-block{
-    margin:0 auto;
+    margin: auto auto;
 }
 .padding{
     padding:10px 15px;
 }
 .margin-top{
     margin-top: 1.5em;
+}
+
+.center-align{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.button-field{
+    width: 100%;
+}
+
+.center-align-field{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .field{

@@ -1,24 +1,26 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 * Ruby version
 
-* System dependencies
+    'rails', '~> 6.1.4', '>= 6.1.4.1'
 
-* Configuration
+* System dependencies
+    
+    Will_paginate ~> 3.1
 
 * Database creation
 
+    rails db:create
+
 * Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
+    rails db:migrate
 
 * Deployment instructions
 
-* ...
+    rails s
+
+Access
+
+user: admin@gmail.com
+pass: 291ABASD932 
