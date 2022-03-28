@@ -1,7 +1,42 @@
 @import '~bootstrap/scss/bootstrap';
+@import './colors.scss';
+
+/** Table responsive design*/
+.table {
+    thead{
+        tr :nth-child(1){display:none;}
+        tr :nth-child(2){display:none;}
+        tr :nth-child(3){display:none;}
+        tr :nth-child(5){display:none;}
+        tr :nth-child(6){display:none;}
+        tr :nth-child(7){display:none;}
+    }
+    tbody{
+        tr :nth-child(1){display:none;}
+        tr :nth-child(2){display:none;}
+        tr :nth-child(3){display:none;}
+        tr :nth-child(5){display:none;}
+        tr :nth-child(6){display:none;}
+        tr :nth-child(7){display:none;}
+        tr :nth-child(8) a{display:block;}
+        tr :nth-child(9) a{display:block;}
+    }
+}
+
+.nav-container{
+    @extend .navbar-nav;
+    background-color: var(--main-color);
+    text-align: right;
+}
 
 a{
     text-decoration: none;
+}
+
+.big-title{
+    text-transform: uppercase;
+    text-align: center;
+    margin: 1rem 0;
 }
 
 .small-container{
@@ -69,10 +104,37 @@ a{
     margin-top: 1em;
 }
 
+
 .count-prospects{
     width: 100%;
     display: flex;
     flex-direction: row;
     margin-right: 1.5rem;
     justify-content: space-between;
+}
+
+
+.container-prospects{
+    text-align: center;
+}
+
+@media (min-width: 992px) {
+    .table {
+        thead{
+            tr :nth-child(1){display: table-cell;}
+            tr :nth-child(2){display: table-cell;}
+            tr :nth-child(3){display: table-cell;}
+            tr :nth-child(5){display: table-cell;}
+            tr :nth-child(6){display: table-cell;}
+            tr :nth-child(7){display: table-cell;}
+        }
+        tbody{
+            tr :nth-child(1){display: table-cell;}
+            tr :nth-child(2){display: table-cell;}
+            tr :nth-child(3){display: table-cell;}
+            tr :nth-child(5){display: table-cell;}
+            tr :nth-child(6){display: table-cell;}
+            tr :nth-child(7){display: table-cell;}
+        }
+    }
 }

@@ -1,12 +1,21 @@
-<nav class="nav bg-light padding">
-    <li class="nav-item">
-        <%= link_to "Inicio", root_path, class:"nav-link"%>
-    </li>
-    <li class="nav-item">
-        <%= link_to 'Nuevo Prospecto', new_prospect_path, class:"nav-link" %>
-    </li>
-    <li class="nav-item">
-        <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class:"nav-link"%>
-    </li>
-
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="<%= root_path%>">Aprendizaje101</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="nav-container">
+        <li class="nav-item">
+            <%= link_to "Inicio", root_path, class:"nav-link"%>
+        </li>
+        <li class="nav-item">
+            <%= link_to 'Nuevo Prospecto', new_prospect_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class:"nav-link"%>
+        </li>
+      </div>
+    </div>
+  </div>
 </nav>
