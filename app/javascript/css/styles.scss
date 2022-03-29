@@ -1,15 +1,28 @@
 @import '~bootstrap/scss/bootstrap';
 @import './colors.scss';
 
+
+body{
+    box-sizing: border-box;
+    background-color: var(--bs-white);
+}
 /** Table responsive design*/
+
 .table {
+    border-collapse: separate !important;
+    border-spacing: 0;
     thead{
-        tr :nth-child(1){display:none;}
+        background-color: var(--main-color);
+        color: var(--bs-white);
+        
+        tr :nth-child(1){display:none; border-top-left-radius: 7.5px;}
         tr :nth-child(2){display:none;}
         tr :nth-child(3){display:none;}
+        tr :nth-child(4){border-top-left-radius: 7.5px;}
         tr :nth-child(5){display:none;}
         tr :nth-child(6){display:none;}
         tr :nth-child(7){display:none;}
+        tr :nth-child(8){border-top-right-radius: 7.5px;}
     }
     tbody{
         tr :nth-child(1){display:none;}
@@ -61,12 +74,18 @@ a{
 
 .large-container{
     width: 100%;
-    max-width: 960px;
+    max-width: 1000px;
 }
 
 .center-block{
     margin: auto auto;
 }
+
+.responsive-container{
+    width: 90%;
+    margin: 0 auto;
+}
+
 .padding{
     padding:10px 15px;
 }
@@ -83,6 +102,12 @@ a{
 
 .button-field{
     width: 100%;
+    background-color: var(--bs-teal);
+    &:hover{
+        background-color: var(--bs-teal);
+        border-color: var(--bs-teal);
+    }
+    border-color: var(--bs-teal);
 }
 
 .center-align-field{
@@ -121,24 +146,36 @@ a{
 
 
 .count-prospects{
+    & div:nth-of-type(1){background-color: var(--bs-yellow);}
+    & div:nth-of-type(2){background-color: var(--bs-orange);}
+    & div:nth-of-type(3){background-color: var(--bs-cyan);}
+    color: var(--bs-white);
     width: 100%;
     display: flex;
     flex-direction: row;
     margin-right: 1.5rem;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 
 .container-prospects{
     text-align: center;
+    background-color: var(--cream);
+    flex-basis: 0; /* Establece el valor inicial de calculo según eje (width y height) */
+    flex-grow: 1; /* LLena en espacio, en combinación con flex basis divide los espacios exactos de los elementos contenidos*/
+    border-radius: 15px;
+    padding: .5rem 0;
 }
 
+
+/**LAPTOP RESOLUTION*/
 @media (min-width: 992px) {
     .table {
         thead{
             tr :nth-child(1){display: table-cell;}
             tr :nth-child(2){display: table-cell;}
             tr :nth-child(3){display: table-cell;}
+            tr :nth-child(4){border-top-left-radius: 0;}
             tr :nth-child(5){display: table-cell;}
             tr :nth-child(6){display: table-cell;}
             tr :nth-child(7){display: table-cell;}
@@ -155,5 +192,14 @@ a{
 
     .collapse-nav{
         justify-content: flex-end;
+    }
+
+    .container-prospects{
+        flex-basis: 150px; /* Establece el valor inicial de calculo según eje (width y height) */
+        flex-grow:  unset; /* LLena en espacio, en combinación con flex basis divide los espacios exactos de los elementos contenidos*/
+    }
+
+    .small-container{
+        max-width: 650px;
     }
 }
