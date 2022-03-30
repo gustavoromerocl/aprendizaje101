@@ -120,6 +120,16 @@ a{
     margin: .5rem 0;
 }
 
+.button-field-back{
+    @extend .button-field;
+    background-color: var(--gray);
+    &:hover, &:active{
+        background-color: var(--gray);
+        border-color: var(--gray);
+    }
+    border-color: var(--gray);
+}
+
 .center-align-field{
     display: flex;
     justify-content: center;
