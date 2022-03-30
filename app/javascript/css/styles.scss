@@ -16,11 +16,7 @@ body{
     background-color: var(--bs-white);
 }
 
-.alert{
-    @extend .alert;
-    position: absolute;
-    width: 100%;
-}
+
 /** Table responsive design*/
 
 .table {
