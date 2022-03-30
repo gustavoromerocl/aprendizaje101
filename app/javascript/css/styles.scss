@@ -1,6 +1,14 @@
 @import '~bootstrap/scss/bootstrap';
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
 @import './colors.scss';
 
+
+/**ICONS*/
+
+.bi{
+    @extend .bi;
+    color: var(--dark-gray);
+}
 
 body{
     box-sizing: border-box;
@@ -33,6 +41,7 @@ body{
         tr :nth-child(7){display:none;}
         tr :nth-child(8) a{display:block;}
         tr :nth-child(9) a{display:block;}
+        tr :nth-child(10) a{display:block;}
     }
 }
 
@@ -103,11 +112,12 @@ a{
 .button-field{
     width: 100%;
     background-color: var(--bs-teal);
-    &:hover{
+    &:hover, &:active{
         background-color: var(--bs-teal);
         border-color: var(--bs-teal);
     }
     border-color: var(--bs-teal);
+    margin: .5rem 0;
 }
 
 .center-align-field{

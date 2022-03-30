@@ -24,9 +24,9 @@
           <td><%= prospect.state.status_name %></td>
           <td><%= current_user.email %></td>
           <td><%= prospect.created_at %></td>
-          <td><%= link_to 'Mostrar', prospect %></td>
-          <td><%= link_to 'Editar', edit_prospect_path(prospect) %></td>
-          <td><%= link_to 'Eliminar', prospect, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to "", prospect, class: "bi bi-eye-fill" %></td>
+          <td><%= link_to '', edit_prospect_path(prospect), class: "bi bi-pencil-fill" %></td>
+          <td><%= link_to '', prospect, class: "bi bi-trash3-fill", method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
@@ -77,9 +77,9 @@
           <td><%= prospect.state.status_name %></td>
           <td><%= current_user.email %></td>
           <td><%= prospect.created_at %></td>
-          <td><%= link_to 'Mostrar', prospect %></td>
-          <td><%= link_to 'Editar', edit_prospect_path(prospect) %></td>
-          <td><%= link_to 'Eliminar', prospect, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to "", prospect, class: "bi bi-eye-fill" %></td>
+          <td><%= link_to '', edit_prospect_path(prospect), class: "bi bi-pencil-fill" %></td>
+          <td><%= link_to '', prospect, class: "bi bi-trash3-fill", method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
