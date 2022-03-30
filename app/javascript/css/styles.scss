@@ -10,9 +10,16 @@
     color: var(--dark-gray);
 }
 
+/*GLOBAL*/
 body{
     box-sizing: border-box;
     background-color: var(--bs-white);
+}
+
+.alert{
+    @extend .alert;
+    position: absolute;
+    width: 100%;
 }
 /** Table responsive design*/
 
